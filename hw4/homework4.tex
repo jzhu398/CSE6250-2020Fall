@@ -1,0 +1,213 @@
+\documentclass[12pt]{article}
+\usepackage{enumitem}
+\usepackage{setspace}
+\usepackage{changepage}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{amsmath, amsthm}
+\RequirePackage[colorlinks]{hyperref}
+\usepackage[lined,boxed,linesnumbered,commentsnumbered]{algorithm2e}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{color, colortbl}
+
+\definecolor{Yellow}{rgb}{255,255,0}
+
+% \usepackage{algorithm}
+% \usepackage[noend]{algpseudocode}
+
+\lstset{basicstyle=\ttfamily,
+  showstringspaces=false,
+  commentstyle=\color{red},
+  keywordstyle=\color{blue}
+}
+\usepackage[draft]{todonotes}   % notes showed
+
+\def\SA#1{[{\color{red}SA: \it #1}]}
+\def\JS#1{[{\color{magenta}JS: \it #1}]}
+
+% Margins
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in
+
+\linespread{1.1}
+
+% Commands
+\newenvironment{solution}
+  {\begin{proof}[Solution]}
+  {\end{proof}}
+
+\title{CSE6250: Big Data Analytics in Healthcare \\ Homework 4}
+\author{Jimeng Sun}
+\date{Deadline: 11:55 PM AoE, Oct 18, 2020}
+
+\begin{document}
+
+\maketitle
+\begin{itemize}
+\item Discussion is encouraged, but each student must write his/her own answers and explicitly mention any collaborators.
+\item Each student is expected to respect and follow \href{http://osi.gatech.edu/content/honor-code}{GT Honor Code}.
+\item Please reference any code you use in comments (limit 3 lines of code per block) to avoid plagiarism inquiries during submission analysis.
+\item Please type any written portions with \LaTeX\ or Microsoft Word. We don't accept hand-written submissions.
+\item In this homework you will also be graded on the performance of your algorithm implementation. Implement the algorithms as efficiently as possible. If we find that your Spark code is not parallel (e.g. unnecessary \textit{collects}), we will deduct up to 50 points.
+\item DO NOT change filenames, directory structures, or function signatures. Doing so, may cause test scripts to fail and no points may be awarded. You can, however, add helper methods to existing classes as needed.
+\end{itemize}
+
+\section*{Overview}
+
+Patients often exhibit highly complex clinical presentations in the clinic, making it difficult to determine optimal treatment solutions or understand health risks in any particular patient. Meanwhile, electronic health record systems and health records provide rich information on aspects of patients such as diagnosis and medication histories. These data can be leveraged in order to identify patients that are similar to each other via patient similarity algorithms. The insight from patient similarity may be used for applications such as allocation of resources, determining targeted treatment plans, or constructing cohorts for predictive modeling studies. There are several strategies for patient similarity, including graph based algorithms.
+In this homework, you will study related concepts and implement simple algorithms to compute patient similarity. You will be required to implement those algorithms in Spark GraphX using Scala.
+
+\includegraphics[height=3in]{similarity_picture.png}
+
+\section{Heterogeneous patient graph [25 points]}
+
+Graphical models are one way to represent patient EHR data. Unlike the traditional approaches for data storage, such as relational databases, graphical models can give us insight into the relations among patients, diagnosis, medications, labs, etc. Not much research has been done on using graphs in healthcare applications, needless to say, there is no existing implementation that uses Spark GraphX to construct a patient graph and perform various analyses using those new big data tools.
+
+Implement code that consumes patient, diagnosis, medication, and lab input extracted from the MIMIC III database and return a GraphX model. You will use this model in subsequent steps to perform additional tasks. Your algorithm must be implemented in the GraphLoader load method. {\textbf{Do not modify the method signature or points will be deducted.}} The following files are provided for you to construct the graph (ensure that those files remain in your \textbf{data} directory):
+
+\begin{itemize}
+\item \textbf{PATIENT.csv}: Each line represents a patient with some demographic information such as gender, date of birth (dob), date of death (dod) and expire flag. 
+\item \textbf{DIAGNOSTIC.csv}: Each line represents a diagnosis for a corresponding patient ID. In addition to the diagnosis and patient ID the file contains other information such as the date and diagnosis sequence (primary, secondary, etc.).
+\item \textbf{MEDICATION.csv}: Each line represents a medication for a corresponding patient. med name represents the name of the medication.
+\item \textbf{LAB.csv}: Each line represents a lab result for a patient. The name of the lab, the units for the lab, and the value for the lab are found in specific columns on this file.
+\end{itemize}
+Important note: every row in the diagnostic, medication and lab CSV files corresponds to an edge in the graph, representing an event. Therefore, a single patient can have multiple events related to the same diagnosis, medication or lab. Moreover, you will only create a single edge between a patient and diagnosis in the graph using the most recent event infor- mation. If there are two same diagnosis given on the same day, just take one of them. The same applies for medications and labs. To make it more clear, suppose we have the sample diagnostic data in the Table 1 below, you will create an edge for the event in the highlighted row only
+\\ \\
+\begin{minipage}{\linewidth}
+	\captionof{table}{Sample diagnostic data} \label{table:sample_data}
+	\begin{center}
+		\begin{tabular}{ | l | l | l | l | l |}
+			\hline
+			subject\_id & date & enc\_id & code & sequence \\ 
+			\hline
+			3  &  211574 & 2075 & 774.6  & 1\\ 
+			\hline \hline 
+			3 &  249345 & 2099 & 774.6  & 1 \\ 
+			\hline \hline
+			\rowcolor{Yellow} 3 & 507510 & 2125 & 774.6  & 2 \\
+			\hline
+		\end{tabular}
+	\end{center}
+	\end {minipage}\\
+
+Your task is to use the files above to generate a bipartite graph in GraphX containing patient, diagnosis, medication and lab vertices. You will then create edges that will only connect patients to diagnosis, medication and lab. Details about each vertex and edge follows: (Hint: learn how to use reduceByKey.)
+
+\begin{itemize}
+\item \textbf{Patient vertex}: a vertex containing patient related information stored in a  \textit{PatientProperty} class which extends  \textit{VertexProperty}. The  \textit{PatientProperty} class contains the fields:
+\begin{itemize}
+\item \textit{patientID}
+\item \textit{sex}
+\item \textit{dob}: date of birth
+\item \textit{dod}: date of death
+\end{itemize}
+
+\item\textbf{Diagnostic vertex}: a vertex containing diagnosis related information stored in a \textit{DiagnosticProperty} class which extends  \textit{VertexProperty}. The \textit{DiagnosticProperty} class contains the follow fields:
+\begin{itemize}
+\item \textit{icd9code}: the ICD9 diagnosis code
+\end{itemize}
+
+\item \textbf{Lab result vertex}: a vertex containing lab result information stored in a  \textit{LabResultProperty} class which extends \textit{VertexProperty}. The  \textit{LabResultProperty} class contains the fields:
+\begin{itemize}
+\item \textit{testName}: name associated with the lab result
+\end{itemize}
+
+\item \textbf{Medication vertex}: a vertex containing medication related information stored in a \textit{MedicationProperty} class which extends \textit{VertexProperty}. The \textit{MedicationProperty} class contains the fields:
+\begin{itemize}
+\item \textit{medicine}: medication name
+\end{itemize}
+\end{itemize}
+
+The graph should contain three types of edges: patient-lab, patient-diagnostic and pa- tientmedication. Similar to the vertices, each of those edges also have properties and are defined as follows:
+
+\begin{itemize}
+\item \textbf{Patient-lab edge}: an edge containing information linking a patient to a lab result, which is stored in a \textit{PatientLabEdgeProperty} class which extends  \textit{EdgeProperty}. The \textit{PatientLabEdgeProperty} class contains  \textit{labResult} which is of \textit{LabResult} class defined in models.
+
+\item \textbf{Patient-diagnostic edge}: an edge containing information linking a patient to a diagnostic code, which is stored in a \textit{PatientDiagnosticEdgeProperty} class which extends \textit{EdgeProperty}. The \textit{PatientDiagnosticEdgeProperty} class contains \textit{diagnostic}, which is a \textit{Diagnostic} class defined in models.
+
+\item \textbf{Patient-medication edge}: an edge containing information linking a patient to a medication, which is stored in a \textit{PatientMedicationEdgeProperty} class which extends \textit{EdgeProperty}. The \textit{PatientMedicationEdgeProperty} class contains \textit{medication}, which is a \textit{Medication} class defined in models.
+\end{itemize}
+
+
+\noindent From this section you are to perform the following tasks:
+\begin{itemize}
+\item Construct a bipartite graph as discussed above using GraphX.
+\item All edges in the graph should be bi-directional.
+\item Make sure for patient vertices you use the patientID as a VertexId and for other types of vertices generate vertex IDs.
+\item Please implement your code in \textbf{GraphLoader.load()}. Do not change this method signature and you are allowed to add any other secondary methods that you can call from these two methods.
+\end{itemize}
+
+\section{Compute Jaccard coefficient [20 points]}
+Jaccard coefficient is one of the simplest approaches for computing similarities among objects. For instance, given two patients each described by a set of diagnosis, medication and lab results such that $ P_i = \{Dx1, Rx3, Lab6 ...,\} $ and $ P_j = \{Lab3, Dx2, Rx5 ...,\} $ the Jaccard similarity between the two patients is given by \\
+
+$ s_{ij} = \dfrac{|P_i \cap P_j|}{|P_i \cup P_j|} $ \\
+
+Two patients are completely similar if $ s_{ij} = 1 $ and dissimilar if $ s_{ij} = 0 $.
+
+\noindent Using the Jaccard similarity, you are to perform the following tasks:
+\begin{itemize}
+\item Please implement your code in \textbf{Jaccard.jaccardSimilarityOneVsAll()}. DO NOT change the method signature and you are allowed to add any other secondary methods that you can call from these two methods. \textbf{\textit{Please do not modify the function declaration. You will lose points for doing so.}}
+\end{itemize}
+
+\section{Random walk with restart [30 points]}
+Random walk with restart (RWR) is a simple variation of PageRank. With PageRank, you start at a graph vertice and move to one of the adjacent vertices at each step. You also have a random probability where you jump to a random vertice instead of one of the adjacent vertice. With RWR, you also have a random jump probability (a.k.a reset probability), but instead of jumping to a random vertice you jump to the vertice you began with.
+
+The RWR algorithm will compute the random walk among all vertices in the graph. If there are $n$ patients, $d$ diagnosis, $m$ medications and $l$ labs, then the output of RWR is a vector of $ k $ elements, where $k = n + d + m + l$ is the number of vertices in the graph. Refer to J. Sun, H. Qu, D. Chakrabarti, and C. Faloutsos, “Neighborhood formation and anomaly detection in bipartite graphs,” in Fifth IEEE International Conference on Data Mining, 2005, p. 8. for more details about RWR.
+
+\begin{itemize}
+\item Implement RWR by completing the \textbf{RandomWalk.randomWalkOneVsAll()} method in the \textbf{RandomWalk} object. Please implement your RWR on your own. You can refer to the GraphX library but do not directly use the existing function. Your RWR by default should be able to run for 100 iterations using a reset probability of 0.15 and return only the top 10 similar patients ignoring similarities between medications, diagnostics, and labs.
+\end{itemize}
+
+\section{Power Iteration Clustering [20 points]}
+Power iteration clustering (PIC) is a scalable and efficient algorithm for clustering vertices of a graph given pairwise similarties as edge properties.  MLlib includes an implementation of PIC, which takes an RDD of (srcId, dstId, similarity) tuples and outputs a model with the clustering assignments. The similarities must be nonnegative. PIC assumes that the similarity measure is symmetric. A pair (srcId, dstId) regardless of the ordering should appear at most once in the input data. You may use print statements for debugging but comment any print statements you added before submitting.
+
+\begin{itemize}
+\item For this question, your task is computing pairwise similarities between all patients. Please implement your code in \textbf{Jaccard.jaccardSimilarityAllPatients()}. DO NOT change the method signature and you are allowed to add any other secondary methods that you can call from this method. In \textbf{Main.main} you will see how this method is invoked [10 points]
+\item Please complete \textbf{PowerIterationClustering.runPIC()}. It is just a kind of wrapper to call Spark's built-in PIC implementation. You need to pass all pair similarities you get from the previous question as input for this function. Then, you can pass it though Spark's PIC implementation with the proper configuration. Please refer to \href{http://spark.apache.org/docs/2.3.0/mllib-clustering.html#power-iteration-clustering-pic}{PIC doc in spark}. Use three clusters and 100 for maximum iterations. You have to return the clustering result as RDD[(patientID, clusterLabel)] where the type of variables are patientID: Long and clusterLabel: Int.  [10 points]
+\end{itemize}
+
+\clearpage
+\section{Submission[5 points]}
+The folder structure of your submission should match the folder structure listed below or your code will not be graded. You can display your folder structure using the \textit{tree} command. All  unrelated files will be discarded during testing. It is your duty to make sure your code can be compiled with the provided SBT. 
+\begin{lstlisting}[language=bash,frame=single]
+<your gtid>-<your gt account>-hw4
+|-- build.sbt
+|-- project
+|   |-- build.properties
+|   \-- plugins.sbt
+|-- output
+|-- src
+|   \-- main
+|       \-- scala
+|           \-- edu
+|               \-- gatech
+|                   \-- cse6250
+|                       |-- clustering
+|                       |   \-- PowerIterationClustering.scala
+|                       |-- graphconstruct
+|                       |   \-- GraphLoader.scala
+|                       |-- helper
+|                       |   \-- CSVHelper.scala
+|		        |   \-- SparkHelper.scala
+|                       |-- jaccard
+|                       |   \-- Jaccard.scala
+|                       |-- main
+|                       |   \-- Main.scala
+|                       |-- model
+|                       |   \-- models.scala
+|                       \-- randomwalk
+|                           \-- Randomwalk.scala
+\end{lstlisting}
+
+Create a tar archive of the folder above with the following command and submit the tar file.
+\begin{lstlisting}[language=bash,frame=single]
+tar -czvf <your gtid>-<your gt account>-hw4.tar.gz \
+  <your gtid>-<your gt account>-hw4
+\end{lstlisting}
+
+\end{document}
+

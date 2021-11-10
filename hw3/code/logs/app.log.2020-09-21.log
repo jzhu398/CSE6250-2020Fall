@@ -1,0 +1,6 @@
+2020-09-21 01:32:58,412 WARN pool-1-thread-1 org.apache.hadoop.util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2020-09-21 01:33:02,344 WARN pool-1-thread-1-ScalaTest-running-LoadRddRawDataTest org.apache.spark.SparkContext - Using an existing SparkContext; some configuration may not take effect.
+2020-09-21 01:33:20,242 WARN pool-1-thread-1-ScalaTest-running-LoadRddRawDataTest org.apache.spark.util.Utils - Truncated the string representation of a plan since it was too large. This behavior can be adjusted by setting 'spark.debug.maxToStringFields' in SparkEnv.conf.
+2020-09-21 02:09:21,867 WARN pool-1-thread-1 org.apache.hadoop.util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2020-09-21 02:09:26,697 WARN pool-1-thread-1-ScalaTest-running-LoadRddRawDataTest org.apache.spark.SparkContext - Using an existing SparkContext; some configuration may not take effect.
+2020-09-21 02:09:50,664 WARN pool-1-thread-1-ScalaTest-running-LoadRddRawDataTest org.apache.spark.util.Utils - Truncated the string representation of a plan since it was too large. This behavior can be adjusted by setting 'spark.debug.maxToStringFields' in SparkEnv.conf.

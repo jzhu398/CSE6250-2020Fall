@@ -1,0 +1,148 @@
+[0m[[0m[31merror[0m] [0m[0m/mnt/host/code/src/main/scala/edu/gatech/cse6250/main/Main.scala:5:27: object clustering is not a member of package edu.gatech.cse6250[0m
+[0m[[0m[31merror[0m] [0m[0mimport edu.gatech.cse6250.clustering.Metrics[0m
+[0m[[0m[31merror[0m] [0m[0m                          ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/host/code/src/main/scala/edu/gatech/cse6250/main/Main.scala:6:27: object features is not a member of package edu.gatech.cse6250[0m
+[0m[[0m[31merror[0m] [0m[0mimport edu.gatech.cse6250.features.FeatureConstruction[0m
+[0m[[0m[31merror[0m] [0m[0m                          ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/host/code/src/main/scala/edu/gatech/cse6250/main/Main.scala:7:27: object helper is not a member of package edu.gatech.cse6250[0m
+[0m[[0m[31merror[0m] [0m[0mimport edu.gatech.cse6250.helper.{ CSVHelper, SparkHelper }[0m
+[0m[[0m[31merror[0m] [0m[0m                          ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/host/code/src/main/scala/edu/gatech/cse6250/main/Main.scala:8:27: object model is not a member of package edu.gatech.cse6250[0m
+[0m[[0m[31merror[0m] [0m[0mimport edu.gatech.cse6250.model.{ Diagnostic, LabResult, Medication }[0m
+[0m[[0m[31merror[0m] [0m[0m                          ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/host/code/src/main/scala/edu/gatech/cse6250/main/Main.scala:9:27: object phenotyping is not a member of package edu.gatech.cse6250[0m
+[0m[[0m[31merror[0m] [0m[0mimport edu.gatech.cse6250.phenotyping.T2dmPhenotype[0m
+[0m[[0m[31merror[0m] [0m[0m                          ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/host/code/src/main/scala/edu/gatech/cse6250/main/Main.scala:10:12: object apache is not a member of package org[0m
+[0m[[0m[31merror[0m] [0m[0mimport org.apache.spark.mllib.clustering.{ GaussianMixture, KMeans, StreamingKMeans }[0m
+[0m[[0m[31merror[0m] [0m[0m           ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/host/code/src/main/scala/edu/gatech/cse6250/main/Main.scala:11:12: object apache is not a member of package org[0m
+[0m[[0m[31merror[0m] [0m[0mimport org.apache.spark.mllib.feature.StandardScaler[0m
+[0m[[0m[31merror[0m] [0m[0m           ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/host/code/src/main/scala/edu/gatech/cse6250/main/Main.scala:12:12: object apache is not a member of package org[0m
+[0m[[0m[31merror[0m] [0m[0mimport org.apache.spark.mllib.linalg.{ DenseMatrix, Matrices, Vector, Vectors }[0m
+[0m[[0m[31merror[0m] [0m[0m           ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/host/code/src/main/scala/edu/gatech/cse6250/main/Main.scala:13:12: object apache is not a member of package org[0m
+[0m[[0m[31merror[0m] [0m[0mimport org.apache.spark.rdd.RDD[0m
+[0m[[0m[31merror[0m] [0m[0m           ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/host/code/src/main/scala/edu/gatech/cse6250/main/Main.scala:14:12: object apache is not a member of package org[0m
+[0m[[0m[31merror[0m] [0m[0mimport org.apache.spark.sql.SparkSession[0m
+[0m[[0m[31merror[0m] [0m[0m           ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/host/code/src/main/scala/edu/gatech/cse6250/main/Main.scala:25:16: object apache is not a member of package org[0m
+[0m[[0m[31merror[0m] [0m[0m    import org.apache.log4j.{ Level, Logger }[0m
+[0m[[0m[31merror[0m] [0m[0m               ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/host/code/src/main/scala/edu/gatech/cse6250/main/Main.scala:27:5: not found: value Logger[0m
+[0m[[0m[31merror[0m] [0m[0m    Logger.getLogger("org").setLevel(Level.WARN)[0m
+[0m[[0m[31merror[0m] [0m[0m    ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/host/code/src/main/scala/edu/gatech/cse6250/main/Main.scala:27:38: not found: value Level[0m
+[0m[[0m[31merror[0m] [0m[0m    Logger.getLogger("org").setLevel(Level.WARN)[0m
+[0m[[0m[31merror[0m] [0m[0m                                     ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/host/code/src/main/scala/edu/gatech/cse6250/main/Main.scala:28:5: not found: value Logger[0m
+[0m[[0m[31merror[0m] [0m[0m    Logger.getLogger("akka").setLevel(Level.WARN)[0m
+[0m[[0m[31merror[0m] [0m[0m    ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/host/code/src/main/scala/edu/gatech/cse6250/main/Main.scala:28:39: not found: value Level[0m
+[0m[[0m[31merror[0m] [0m[0m    Logger.getLogger("akka").setLevel(Level.WARN)[0m
+[0m[[0m[31merror[0m] [0m[0m                                      ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/host/code/src/main/scala/edu/gatech/cse6250/main/Main.scala:30:17: not found: value SparkHelper[0m
+[0m[[0m[31merror[0m] [0m[0m    val spark = SparkHelper.spark[0m
+[0m[[0m[31merror[0m] [0m[0m                ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/host/code/src/main/scala/edu/gatech/cse6250/main/Main.scala:154:45: not found: type RDD[0m
+[0m[[0m[31merror[0m] [0m[0m  def loadRddRawData(spark: SparkSession): (RDD[Medication], RDD[LabResult], RDD[Diagnostic]) = {[0m
+[0m[[0m[31merror[0m] [0m[0m                                            ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/host/code/src/main/scala/edu/gatech/cse6250/main/Main.scala:154:62: not found: type RDD[0m
+[0m[[0m[31merror[0m] [0m[0m  def loadRddRawData(spark: SparkSession): (RDD[Medication], RDD[LabResult], RDD[Diagnostic]) = {[0m
+[0m[[0m[31merror[0m] [0m[0m                                                             ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/host/code/src/main/scala/edu/gatech/cse6250/main/Main.scala:154:78: not found: type RDD[0m
+[0m[[0m[31merror[0m] [0m[0m  def loadRddRawData(spark: SparkSession): (RDD[Medication], RDD[LabResult], RDD[Diagnostic]) = {[0m
+[0m[[0m[31merror[0m] [0m[0m                                                                             ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/host/code/src/main/scala/edu/gatech/cse6250/main/Main.scala:154:29: not found: type SparkSession[0m
+[0m[[0m[31merror[0m] [0m[0m  def loadRddRawData(spark: SparkSession): (RDD[Medication], RDD[LabResult], RDD[Diagnostic]) = {[0m
+[0m[[0m[31merror[0m] [0m[0m                            ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/host/code/src/main/scala/edu/gatech/cse6250/main/Main.scala:39:26: not found: value T2dmPhenotype[0m
+[0m[[0m[31merror[0m] [0m[0m    val phenotypeLabel = T2dmPhenotype.transform(medication, labResult, diagnostic)[0m
+[0m[[0m[31merror[0m] [0m[0m                         ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/host/code/src/main/scala/edu/gatech/cse6250/main/Main.scala:53:23: not found: value FeatureConstruction[0m
+[0m[[0m[31merror[0m] [0m[0m    val rawFeatures = FeatureConstruction.construct(sc, featureTuples)[0m
+[0m[[0m[31merror[0m] [0m[0m                      ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/host/code/src/main/scala/edu/gatech/cse6250/main/Main.scala:74:38: not found: type RDD[0m
+[0m[[0m[31merror[0m] [0m[0m  def testClustering(phenotypeLabel: RDD[(String, Int)], rawFeatures: RDD[(String, Vector)]): (Double, Double, Double) = {[0m
+[0m[[0m[31merror[0m] [0m[0m                                     ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/host/code/src/main/scala/edu/gatech/cse6250/main/Main.scala:74:71: not found: type RDD[0m
+[0m[[0m[31merror[0m] [0m[0m  def testClustering(phenotypeLabel: RDD[(String, Int)], rawFeatures: RDD[(String, Vector)]): (Double, Double, Double) = {[0m
+[0m[[0m[31merror[0m] [0m[0m                                                                      ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/host/code/src/main/scala/edu/gatech/cse6250/main/Main.scala:66:31: not found: value FeatureConstruction[0m
+[0m[[0m[31merror[0m] [0m[0m    val filteredRawFeatures = FeatureConstruction.construct(sc, filteredFeatureTuples)[0m
+[0m[[0m[31merror[0m] [0m[0m                              ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/host/code/src/main/scala/edu/gatech/cse6250/main/Main.scala:75:16: object apache is not a member of package org[0m
+[0m[[0m[31merror[0m] [0m[0m    import org.apache.spark.mllib.linalg.Matrix[0m
+[0m[[0m[31merror[0m] [0m[0m               ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/host/code/src/main/scala/edu/gatech/cse6250/main/Main.scala:76:16: object apache is not a member of package org[0m
+[0m[[0m[31merror[0m] [0m[0m    import org.apache.spark.mllib.linalg.distributed.RowMatrix[0m
+[0m[[0m[31merror[0m] [0m[0m               ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/host/code/src/main/scala/edu/gatech/cse6250/main/Main.scala:80:22: not found: type StandardScaler[0m
+[0m[[0m[31merror[0m] [0m[0m    val scaler = new StandardScaler(withMean = true, withStd = true).fit(rawFeatures.map(_._2))[0m
+[0m[[0m[31merror[0m] [0m[0m                     ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/host/code/src/main/scala/edu/gatech/cse6250/main/Main.scala:80:37: not found: value withMean[0m
+[0m[[0m[31merror[0m] [0m[0m    val scaler = new StandardScaler(withMean = true, withStd = true).fit(rawFeatures.map(_._2))[0m
+[0m[[0m[31merror[0m] [0m[0m                                    ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/host/code/src/main/scala/edu/gatech/cse6250/main/Main.scala:80:54: not found: value withStd[0m
+[0m[[0m[31merror[0m] [0m[0m    val scaler = new StandardScaler(withMean = true, withStd = true).fit(rawFeatures.map(_._2))[0m
+[0m[[0m[31merror[0m] [0m[0m                                                     ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/host/code/src/main/scala/edu/gatech/cse6250/main/Main.scala:87:14: not found: type RowMatrix[0m
+[0m[[0m[31merror[0m] [0m[0m    val mat: RowMatrix = new RowMatrix(rawFeatureVectors)[0m
+[0m[[0m[31merror[0m] [0m[0m             ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/host/code/src/main/scala/edu/gatech/cse6250/main/Main.scala:87:30: not found: type RowMatrix[0m
+[0m[[0m[31merror[0m] [0m[0m    val mat: RowMatrix = new RowMatrix(rawFeatureVectors)[0m
+[0m[[0m[31merror[0m] [0m[0m                             ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/host/code/src/main/scala/edu/gatech/cse6250/main/Main.scala:88:13: not found: type Matrix[0m
+[0m[[0m[31merror[0m] [0m[0m    val pc: Matrix = mat.computePrincipalComponents(10) // Principal components are stored in a local dense matrix.[0m
+[0m[[0m[31merror[0m] [0m[0m            ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/host/code/src/main/scala/edu/gatech/cse6250/main/Main.scala:91:19: not found: value Matrices[0m
+[0m[[0m[31merror[0m] [0m[0m    val densePc = Matrices.dense(pc.numRows, pc.numCols, pc.toArray).asInstanceOf[DenseMatrix][0m
+[0m[[0m[31merror[0m] [0m[0m                  ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/host/code/src/main/scala/edu/gatech/cse6250/main/Main.scala:91:83: not found: type DenseMatrix[0m
+[0m[[0m[31merror[0m] [0m[0m    val densePc = Matrices.dense(pc.numRows, pc.numCols, pc.toArray).asInstanceOf[DenseMatrix][0m
+[0m[[0m[31merror[0m] [0m[0m                                                                                  ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/host/code/src/main/scala/edu/gatech/cse6250/main/Main.scala:93:37: type Vector takes type parameters[0m
+[0m[[0m[31merror[0m] [0m[0m    def transform(feature: Vector): Vector = {[0m
+[0m[[0m[31merror[0m] [0m[0m                                    ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/host/code/src/main/scala/edu/gatech/cse6250/main/Main.scala:93:28: type Vector takes type parameters[0m
+[0m[[0m[31merror[0m] [0m[0m    def transform(feature: Vector): Vector = {[0m
+[0m[[0m[31merror[0m] [0m[0m                           ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/host/code/src/main/scala/edu/gatech/cse6250/main/Main.scala:95:7: not found: value Vectors[0m
+[0m[[0m[31merror[0m] [0m[0m      Vectors.dense(Matrices.dense(1, scaled.size, scaled.toArray).multiply(densePc).toArray)[0m
+[0m[[0m[31merror[0m] [0m[0m      ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/host/code/src/main/scala/edu/gatech/cse6250/main/Main.scala:95:21: not found: value Matrices[0m
+[0m[[0m[31merror[0m] [0m[0m      Vectors.dense(Matrices.dense(1, scaled.size, scaled.toArray).multiply(densePc).toArray)[0m
+[0m[[0m[31merror[0m] [0m[0m                    ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/host/code/src/main/scala/edu/gatech/cse6250/main/Main.scala:182:25: not found: value CSVHelper[0m
+[0m[[0m[31merror[0m] [0m[0m    val LabResult_raw = CSVHelper.loadCSVAsTable(spark, "data/lab_results_INPUT.csv", "lab_results_raw")[0m
+[0m[[0m[31merror[0m] [0m[0m                        ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/host/code/src/main/scala/edu/gatech/cse6250/main/Main.scala:184:20: not found: type RDD[0m
+[0m[[0m[31merror[0m] [0m[0m    val labResult: RDD[LabResult] = df_labResult.map(f=>LabResult(f(0).asInstanceOf[String],dateFormat.parse(f(1).toString),f(2).asInstanceOf[String].toLowerCase,f(3).asInstanceOf[String].filterNot(",".toSet).toDouble))[0m
+[0m[[0m[31merror[0m] [0m[0m                   ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/host/code/src/main/scala/edu/gatech/cse6250/main/Main.scala:184:37: not found: value df_labResult[0m
+[0m[[0m[31merror[0m] [0m[0m    val labResult: RDD[LabResult] = df_labResult.map(f=>LabResult(f(0).asInstanceOf[String],dateFormat.parse(f(1).toString),f(2).asInstanceOf[String].toLowerCase,f(3).asInstanceOf[String].filterNot(",".toSet).toDouble))[0m
+[0m[[0m[31merror[0m] [0m[0m                                    ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/host/code/src/main/scala/edu/gatech/cse6250/main/Main.scala:184:57: not found: value LabResult[0m
+[0m[[0m[31merror[0m] [0m[0m    val labResult: RDD[LabResult] = df_labResult.map(f=>LabResult(f(0).asInstanceOf[String],dateFormat.parse(f(1).toString),f(2).asInstanceOf[String].toLowerCase,f(3).asInstanceOf[String].filterNot(",".toSet).toDouble))[0m
+[0m[[0m[31merror[0m] [0m[0m                                                        ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/host/code/src/main/scala/edu/gatech/cse6250/main/Main.scala:184:93: not found: value dateFormat[0m
+[0m[[0m[31merror[0m] [0m[0m    val labResult: RDD[LabResult] = df_labResult.map(f=>LabResult(f(0).asInstanceOf[String],dateFormat.parse(f(1).toString),f(2).asInstanceOf[String].toLowerCase,f(3).asInstanceOf[String].filterNot(",".toSet).toDouble))[0m
+[0m[[0m[31merror[0m] [0m[0m                                                                                            ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/host/code/src/main/scala/edu/gatech/cse6250/main/Main.scala:186:26: not found: value CSVHelper[0m
+[0m[[0m[31merror[0m] [0m[0m    val Medication_raw = CSVHelper.loadCSVAsTable(spark, "data/medication_orders_INPUT.csv", "medication_orders_raw")[0m
+[0m[[0m[31merror[0m] [0m[0m                         ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/host/code/src/main/scala/edu/gatech/cse6250/main/Main.scala:188:21: not found: type RDD[0m
+[0m[[0m[31merror[0m] [0m[0m    val medication: RDD[Medication] = df_Medication.map(f=>Medication(f(0).asInstanceOf[String], dateFormat.parse(f(1).toString),f(2).asInstanceOf[String].toLowerCase))[0m
+[0m[[0m[31merror[0m] [0m[0m                    ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/host/code/src/main/scala/edu/gatech/cse6250/main/Main.scala:190:26: not found: value CSVHelper[0m
+[0m[[0m[31merror[0m] [0m[0m    val Diagnostic_raw = CSVHelper.loadCSVAsTable(spark, "data/encounter_INPUT.csv", "encounter_raw")[0m
+[0m[[0m[31merror[0m] [0m[0m                         ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/host/code/src/main/scala/edu/gatech/cse6250/main/Main.scala:191:18: not found: value CSVHelper[0m
+[0m[[0m[31merror[0m] [0m[0m    val Dx_raw = CSVHelper.loadCSVAsTable(spark, "data/encounter_dx_INPUT.csv", "Dx_raw")[0m
+[0m[[0m[31merror[0m] [0m[0m                 ^[0m
+[0m[[0m[31merror[0m] [0m[0m/mnt/host/code/src/main/scala/edu/gatech/cse6250/main/Main.scala:193:21: not found: type RDD[0m
+[0m[[0m[31merror[0m] [0m[0m    val diagnostic: RDD[Diagnostic] = df_Diagnostic_dx.map(f=>LabResult(f(0).asInstanceOf[String],dateFormat.parse(f(1).toString),f(2).asInstanceOf[String]))[0m
+[0m[[0m[31merror[0m] [0m[0m                    ^[0m
+[0m[[0m[31merror[0m] [0m[0m49 errors found[0m

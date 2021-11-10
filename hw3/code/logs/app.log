@@ -1,0 +1,113 @@
+2020-09-26 04:55:33,378 WARN pool-1-thread-1 org.apache.hadoop.util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2020-09-26 04:55:37,838 WARN pool-1-thread-1-ScalaTest-running-LoadRddRawDataTest org.apache.spark.SparkContext - Using an existing SparkContext; some configuration may not take effect.
+2020-09-26 04:55:55,383 WARN pool-1-thread-1-ScalaTest-running-LoadRddRawDataTest org.apache.spark.util.Utils - Truncated the string representation of a plan since it was too large. This behavior can be adjusted by setting 'spark.debug.maxToStringFields' in SparkEnv.conf.
+2020-09-26 04:57:53,390 WARN main org.apache.hadoop.util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2020-09-26 04:58:07,284 WARN main org.apache.spark.util.Utils - Truncated the string representation of a plan since it was too large. This behavior can be adjusted by setting 'spark.debug.maxToStringFields' in SparkEnv.conf.
+2020-09-26 04:58:55,851 WARN Executor task launch worker for task 619 com.github.fommil.netlib.BLAS - Failed to load implementation from: com.github.fommil.netlib.NativeSystemBLAS
+2020-09-26 04:58:55,919 WARN Executor task launch worker for task 619 com.github.fommil.netlib.BLAS - Failed to load implementation from: com.github.fommil.netlib.NativeRefBLAS
+2020-09-26 04:58:56,752 WARN main com.github.fommil.netlib.LAPACK - Failed to load implementation from: com.github.fommil.netlib.NativeSystemLAPACK
+2020-09-26 04:58:56,819 WARN main com.github.fommil.netlib.LAPACK - Failed to load implementation from: com.github.fommil.netlib.NativeRefLAPACK
+2020-09-26 04:58:57,352 WARN main org.apache.spark.mllib.clustering.KMeans - The input data is not directly cached, which may hurt performance if its parent RDDs are also uncached.
+2020-09-26 04:58:59,363 WARN main org.apache.spark.mllib.clustering.KMeans - The input data was not directly cached, which may hurt performance if its parent RDDs are also uncached.
+2020-09-26 04:59:17,674 WARN main org.apache.spark.mllib.clustering.KMeans - The input data is not directly cached, which may hurt performance if its parent RDDs are also uncached.
+2020-09-26 04:59:18,478 WARN main org.apache.spark.mllib.clustering.KMeans - The input data was not directly cached, which may hurt performance if its parent RDDs are also uncached.
+2020-09-26 05:15:49,032 WARN main org.apache.hadoop.util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2020-09-26 05:16:02,996 WARN main org.apache.spark.util.Utils - Truncated the string representation of a plan since it was too large. This behavior can be adjusted by setting 'spark.debug.maxToStringFields' in SparkEnv.conf.
+2020-09-26 05:16:55,560 WARN Executor task launch worker for task 619 com.github.fommil.netlib.BLAS - Failed to load implementation from: com.github.fommil.netlib.NativeSystemBLAS
+2020-09-26 05:16:55,651 WARN Executor task launch worker for task 619 com.github.fommil.netlib.BLAS - Failed to load implementation from: com.github.fommil.netlib.NativeRefBLAS
+2020-09-26 05:16:57,130 WARN main com.github.fommil.netlib.LAPACK - Failed to load implementation from: com.github.fommil.netlib.NativeSystemLAPACK
+2020-09-26 05:16:57,223 WARN main com.github.fommil.netlib.LAPACK - Failed to load implementation from: com.github.fommil.netlib.NativeRefLAPACK
+2020-09-26 05:16:57,803 WARN main org.apache.spark.mllib.clustering.KMeans - The input data is not directly cached, which may hurt performance if its parent RDDs are also uncached.
+2020-09-26 05:16:59,816 WARN main org.apache.spark.mllib.clustering.KMeans - The input data was not directly cached, which may hurt performance if its parent RDDs are also uncached.
+2020-09-26 05:17:22,672 WARN main org.apache.spark.mllib.clustering.KMeans - The input data is not directly cached, which may hurt performance if its parent RDDs are also uncached.
+2020-09-26 05:17:23,733 WARN main org.apache.spark.mllib.clustering.KMeans - The input data was not directly cached, which may hurt performance if its parent RDDs are also uncached.
+2020-09-26 05:18:34,419 WARN main org.apache.hadoop.util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2020-09-26 05:18:48,131 WARN main org.apache.spark.util.Utils - Truncated the string representation of a plan since it was too large. This behavior can be adjusted by setting 'spark.debug.maxToStringFields' in SparkEnv.conf.
+2020-09-26 05:19:33,047 WARN Executor task launch worker for task 620 com.github.fommil.netlib.BLAS - Failed to load implementation from: com.github.fommil.netlib.NativeSystemBLAS
+2020-09-26 05:19:33,095 WARN Executor task launch worker for task 620 com.github.fommil.netlib.BLAS - Failed to load implementation from: com.github.fommil.netlib.NativeRefBLAS
+2020-09-26 05:19:33,951 WARN main com.github.fommil.netlib.LAPACK - Failed to load implementation from: com.github.fommil.netlib.NativeSystemLAPACK
+2020-09-26 05:19:34,022 WARN main com.github.fommil.netlib.LAPACK - Failed to load implementation from: com.github.fommil.netlib.NativeRefLAPACK
+2020-09-26 05:19:34,664 WARN main org.apache.spark.mllib.clustering.KMeans - The input data is not directly cached, which may hurt performance if its parent RDDs are also uncached.
+2020-09-26 05:19:36,544 WARN main org.apache.spark.mllib.clustering.KMeans - The input data was not directly cached, which may hurt performance if its parent RDDs are also uncached.
+2020-09-26 05:19:56,413 WARN main org.apache.spark.mllib.clustering.KMeans - The input data is not directly cached, which may hurt performance if its parent RDDs are also uncached.
+2020-09-26 05:19:57,233 WARN main org.apache.spark.mllib.clustering.KMeans - The input data was not directly cached, which may hurt performance if its parent RDDs are also uncached.
+2020-09-26 05:39:17,508 WARN main org.apache.hadoop.util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2020-09-26 05:39:31,477 WARN main org.apache.spark.util.Utils - Truncated the string representation of a plan since it was too large. This behavior can be adjusted by setting 'spark.debug.maxToStringFields' in SparkEnv.conf.
+2020-09-26 05:40:19,986 WARN Executor task launch worker for task 619 com.github.fommil.netlib.BLAS - Failed to load implementation from: com.github.fommil.netlib.NativeSystemBLAS
+2020-09-26 05:40:20,040 WARN Executor task launch worker for task 619 com.github.fommil.netlib.BLAS - Failed to load implementation from: com.github.fommil.netlib.NativeRefBLAS
+2020-09-26 05:40:20,909 WARN main com.github.fommil.netlib.LAPACK - Failed to load implementation from: com.github.fommil.netlib.NativeSystemLAPACK
+2020-09-26 05:40:20,979 WARN main com.github.fommil.netlib.LAPACK - Failed to load implementation from: com.github.fommil.netlib.NativeRefLAPACK
+2020-09-26 05:40:21,567 WARN main org.apache.spark.mllib.clustering.KMeans - The input data is not directly cached, which may hurt performance if its parent RDDs are also uncached.
+2020-09-26 05:40:23,584 WARN main org.apache.spark.mllib.clustering.KMeans - The input data was not directly cached, which may hurt performance if its parent RDDs are also uncached.
+2020-09-26 05:40:44,300 WARN main org.apache.spark.mllib.clustering.KMeans - The input data is not directly cached, which may hurt performance if its parent RDDs are also uncached.
+2020-09-26 05:40:45,196 WARN main org.apache.spark.mllib.clustering.KMeans - The input data was not directly cached, which may hurt performance if its parent RDDs are also uncached.
+2020-09-26 05:47:29,079 WARN main org.apache.hadoop.util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2020-09-26 05:47:42,914 WARN main org.apache.spark.util.Utils - Truncated the string representation of a plan since it was too large. This behavior can be adjusted by setting 'spark.debug.maxToStringFields' in SparkEnv.conf.
+2020-09-26 05:48:37,024 WARN Executor task launch worker for task 620 com.github.fommil.netlib.BLAS - Failed to load implementation from: com.github.fommil.netlib.NativeSystemBLAS
+2020-09-26 05:48:37,145 WARN Executor task launch worker for task 620 com.github.fommil.netlib.BLAS - Failed to load implementation from: com.github.fommil.netlib.NativeRefBLAS
+2020-09-26 05:48:38,082 WARN main com.github.fommil.netlib.LAPACK - Failed to load implementation from: com.github.fommil.netlib.NativeSystemLAPACK
+2020-09-26 05:48:38,137 WARN main com.github.fommil.netlib.LAPACK - Failed to load implementation from: com.github.fommil.netlib.NativeRefLAPACK
+2020-09-26 05:48:38,677 WARN main org.apache.spark.mllib.clustering.KMeans - The input data is not directly cached, which may hurt performance if its parent RDDs are also uncached.
+2020-09-26 05:48:40,503 WARN main org.apache.spark.mllib.clustering.KMeans - The input data was not directly cached, which may hurt performance if its parent RDDs are also uncached.
+2020-09-26 05:49:02,221 WARN main org.apache.spark.mllib.clustering.KMeans - The input data is not directly cached, which may hurt performance if its parent RDDs are also uncached.
+2020-09-26 05:49:03,092 WARN main org.apache.spark.mllib.clustering.KMeans - The input data was not directly cached, which may hurt performance if its parent RDDs are also uncached.
+2020-09-26 06:03:40,494 WARN main org.apache.hadoop.util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2020-09-26 06:03:56,734 WARN main org.apache.spark.util.Utils - Truncated the string representation of a plan since it was too large. This behavior can be adjusted by setting 'spark.debug.maxToStringFields' in SparkEnv.conf.
+2020-09-26 06:04:56,373 WARN Executor task launch worker for task 618 com.github.fommil.netlib.BLAS - Failed to load implementation from: com.github.fommil.netlib.NativeSystemBLAS
+2020-09-26 06:04:56,439 WARN Executor task launch worker for task 618 com.github.fommil.netlib.BLAS - Failed to load implementation from: com.github.fommil.netlib.NativeRefBLAS
+2020-09-26 06:04:57,263 WARN main com.github.fommil.netlib.LAPACK - Failed to load implementation from: com.github.fommil.netlib.NativeSystemLAPACK
+2020-09-26 06:04:57,329 WARN main com.github.fommil.netlib.LAPACK - Failed to load implementation from: com.github.fommil.netlib.NativeRefLAPACK
+2020-09-26 06:04:58,117 WARN main org.apache.spark.mllib.clustering.KMeans - The input data is not directly cached, which may hurt performance if its parent RDDs are also uncached.
+2020-09-26 06:05:00,394 WARN main org.apache.spark.mllib.clustering.KMeans - The input data was not directly cached, which may hurt performance if its parent RDDs are also uncached.
+2020-09-26 06:05:24,271 WARN main org.apache.spark.mllib.clustering.KMeans - The input data is not directly cached, which may hurt performance if its parent RDDs are also uncached.
+2020-09-26 06:05:25,327 WARN main org.apache.spark.mllib.clustering.KMeans - The input data was not directly cached, which may hurt performance if its parent RDDs are also uncached.
+2020-09-26 06:40:42,748 WARN main org.apache.hadoop.util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2020-09-26 06:40:56,771 WARN main org.apache.spark.util.Utils - Truncated the string representation of a plan since it was too large. This behavior can be adjusted by setting 'spark.debug.maxToStringFields' in SparkEnv.conf.
+2020-09-26 06:41:44,247 WARN Executor task launch worker for task 618 com.github.fommil.netlib.BLAS - Failed to load implementation from: com.github.fommil.netlib.NativeSystemBLAS
+2020-09-26 06:41:44,314 WARN Executor task launch worker for task 618 com.github.fommil.netlib.BLAS - Failed to load implementation from: com.github.fommil.netlib.NativeRefBLAS
+2020-09-26 06:41:45,192 WARN main com.github.fommil.netlib.LAPACK - Failed to load implementation from: com.github.fommil.netlib.NativeSystemLAPACK
+2020-09-26 06:41:45,254 WARN main com.github.fommil.netlib.LAPACK - Failed to load implementation from: com.github.fommil.netlib.NativeRefLAPACK
+2020-09-26 06:41:45,866 WARN main org.apache.spark.mllib.clustering.KMeans - The input data is not directly cached, which may hurt performance if its parent RDDs are also uncached.
+2020-09-26 06:41:47,774 WARN main org.apache.spark.mllib.clustering.KMeans - The input data was not directly cached, which may hurt performance if its parent RDDs are also uncached.
+2020-09-26 06:42:12,241 WARN main org.apache.spark.mllib.clustering.KMeans - The input data is not directly cached, which may hurt performance if its parent RDDs are also uncached.
+2020-09-26 06:42:13,008 WARN main org.apache.spark.mllib.clustering.KMeans - The input data was not directly cached, which may hurt performance if its parent RDDs are also uncached.
+2020-09-26 06:49:56,343 WARN main org.apache.hadoop.util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2020-09-26 06:50:10,413 WARN main org.apache.spark.util.Utils - Truncated the string representation of a plan since it was too large. This behavior can be adjusted by setting 'spark.debug.maxToStringFields' in SparkEnv.conf.
+2020-09-26 06:51:01,467 WARN Executor task launch worker for task 621 com.github.fommil.netlib.BLAS - Failed to load implementation from: com.github.fommil.netlib.NativeSystemBLAS
+2020-09-26 06:51:01,515 WARN Executor task launch worker for task 621 com.github.fommil.netlib.BLAS - Failed to load implementation from: com.github.fommil.netlib.NativeRefBLAS
+2020-09-26 06:51:02,353 WARN main com.github.fommil.netlib.LAPACK - Failed to load implementation from: com.github.fommil.netlib.NativeSystemLAPACK
+2020-09-26 06:51:02,406 WARN main com.github.fommil.netlib.LAPACK - Failed to load implementation from: com.github.fommil.netlib.NativeRefLAPACK
+2020-09-26 06:51:02,978 WARN main org.apache.spark.mllib.clustering.KMeans - The input data is not directly cached, which may hurt performance if its parent RDDs are also uncached.
+2020-09-26 06:51:05,916 WARN main org.apache.spark.mllib.clustering.KMeans - The input data was not directly cached, which may hurt performance if its parent RDDs are also uncached.
+2020-09-26 06:51:25,079 WARN main org.apache.spark.mllib.clustering.KMeans - The input data is not directly cached, which may hurt performance if its parent RDDs are also uncached.
+2020-09-26 06:51:26,091 WARN main org.apache.spark.mllib.clustering.KMeans - The input data was not directly cached, which may hurt performance if its parent RDDs are also uncached.
+2020-09-26 06:54:27,853 WARN main org.apache.hadoop.util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2020-09-26 06:54:41,468 WARN main org.apache.spark.util.Utils - Truncated the string representation of a plan since it was too large. This behavior can be adjusted by setting 'spark.debug.maxToStringFields' in SparkEnv.conf.
+2020-09-26 06:55:28,737 WARN Executor task launch worker for task 620 com.github.fommil.netlib.BLAS - Failed to load implementation from: com.github.fommil.netlib.NativeSystemBLAS
+2020-09-26 06:55:28,778 WARN Executor task launch worker for task 620 com.github.fommil.netlib.BLAS - Failed to load implementation from: com.github.fommil.netlib.NativeRefBLAS
+2020-09-26 06:55:29,593 WARN main com.github.fommil.netlib.LAPACK - Failed to load implementation from: com.github.fommil.netlib.NativeSystemLAPACK
+2020-09-26 06:55:29,656 WARN main com.github.fommil.netlib.LAPACK - Failed to load implementation from: com.github.fommil.netlib.NativeRefLAPACK
+2020-09-26 06:55:30,149 WARN main org.apache.spark.mllib.clustering.KMeans - The input data is not directly cached, which may hurt performance if its parent RDDs are also uncached.
+2020-09-26 06:55:32,325 WARN main org.apache.spark.mllib.clustering.KMeans - The input data was not directly cached, which may hurt performance if its parent RDDs are also uncached.
+2020-09-26 06:55:49,896 WARN main org.apache.spark.mllib.clustering.KMeans - The input data is not directly cached, which may hurt performance if its parent RDDs are also uncached.
+2020-09-26 06:55:51,439 WARN main org.apache.spark.mllib.clustering.KMeans - The input data was not directly cached, which may hurt performance if its parent RDDs are also uncached.
+2020-09-26 06:57:24,241 WARN main org.apache.hadoop.util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2020-09-26 06:57:37,753 WARN main org.apache.spark.util.Utils - Truncated the string representation of a plan since it was too large. This behavior can be adjusted by setting 'spark.debug.maxToStringFields' in SparkEnv.conf.
+2020-09-26 06:58:24,415 WARN Executor task launch worker for task 620 com.github.fommil.netlib.BLAS - Failed to load implementation from: com.github.fommil.netlib.NativeSystemBLAS
+2020-09-26 06:58:24,462 WARN Executor task launch worker for task 620 com.github.fommil.netlib.BLAS - Failed to load implementation from: com.github.fommil.netlib.NativeRefBLAS
+2020-09-26 06:58:25,287 WARN main com.github.fommil.netlib.LAPACK - Failed to load implementation from: com.github.fommil.netlib.NativeSystemLAPACK
+2020-09-26 06:58:25,345 WARN main com.github.fommil.netlib.LAPACK - Failed to load implementation from: com.github.fommil.netlib.NativeRefLAPACK
+2020-09-26 06:58:25,849 WARN main org.apache.spark.mllib.clustering.KMeans - The input data is not directly cached, which may hurt performance if its parent RDDs are also uncached.
+2020-09-26 06:58:27,707 WARN main org.apache.spark.mllib.clustering.KMeans - The input data was not directly cached, which may hurt performance if its parent RDDs are also uncached.
+2020-09-26 06:58:45,833 WARN main org.apache.spark.mllib.clustering.KMeans - The input data is not directly cached, which may hurt performance if its parent RDDs are also uncached.
+2020-09-26 06:58:47,061 WARN main org.apache.spark.mllib.clustering.KMeans - The input data was not directly cached, which may hurt performance if its parent RDDs are also uncached.
+2020-09-26 07:00:17,930 WARN main org.apache.hadoop.util.NativeCodeLoader - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2020-09-26 07:00:31,389 WARN main org.apache.spark.util.Utils - Truncated the string representation of a plan since it was too large. This behavior can be adjusted by setting 'spark.debug.maxToStringFields' in SparkEnv.conf.
+2020-09-26 07:01:19,780 WARN Executor task launch worker for task 620 com.github.fommil.netlib.BLAS - Failed to load implementation from: com.github.fommil.netlib.NativeSystemBLAS
+2020-09-26 07:01:19,824 WARN Executor task launch worker for task 620 com.github.fommil.netlib.BLAS - Failed to load implementation from: com.github.fommil.netlib.NativeRefBLAS
+2020-09-26 07:01:20,651 WARN main com.github.fommil.netlib.LAPACK - Failed to load implementation from: com.github.fommil.netlib.NativeSystemLAPACK
+2020-09-26 07:01:20,715 WARN main com.github.fommil.netlib.LAPACK - Failed to load implementation from: com.github.fommil.netlib.NativeRefLAPACK
+2020-09-26 07:01:21,219 WARN main org.apache.spark.mllib.clustering.KMeans - The input data is not directly cached, which may hurt performance if its parent RDDs are also uncached.
+2020-09-26 07:01:24,746 WARN main org.apache.spark.mllib.clustering.KMeans - The input data was not directly cached, which may hurt performance if its parent RDDs are also uncached.
+2020-09-26 07:01:43,332 WARN main org.apache.spark.mllib.clustering.KMeans - The input data is not directly cached, which may hurt performance if its parent RDDs are also uncached.
+2020-09-26 07:01:44,560 WARN main org.apache.spark.mllib.clustering.KMeans - The input data was not directly cached, which may hurt performance if its parent RDDs are also uncached.
